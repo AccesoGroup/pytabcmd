@@ -49,9 +49,3 @@ class PyTabCmd(object):
             name
         ]
         self._execute_command(command)
-
-if __name__ == '__main__':
-    p = PyTabCmd(linux=True)
-    p.login(site='mediaintelligence')
-    p.create_project('foobar', description='Foobar rules')
-    p.delete_project('foobar')
