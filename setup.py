@@ -11,5 +11,5 @@ setup(
     author_email='miguelsr87@gmail.com',
     packages=find_packages(exclude=['tests']),
     keywords='tabcmb tableau',
-    url='foo'
+    url='https://github.com/AccesoGroup/pytabcmd'
 )
