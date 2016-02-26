@@ -17,6 +17,7 @@ class PyTabCmd(object):
 
     def _execute_command(self, command):
         # In Tableau 9.2 we have to append --no-certcheck for linux connections
+        # More info here: https://community.tableau.com/message/450517#450517
         command = command + ["--no-certcheck"] if self.linux else command
         subprocess.call(command)
 
