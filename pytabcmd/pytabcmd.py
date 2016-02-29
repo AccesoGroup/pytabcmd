@@ -19,7 +19,7 @@ class PyTabCmd(object):
         # In Tableau 9.2 we have to append --no-certcheck for linux connections
         # More info here: https://community.tableau.com/message/450517#450517
         command = command + ["--no-certcheck"] if self.linux else command
-        subprocess.call(command)
+        return subprocess.call(command)
 
     def login(self, site, password=None):
         pwd = password or settings.get_cfg_setting('TABLEAU_ONLINE_PASSWORD'),
@@ -31,7 +31,7 @@ class PyTabCmd(object):
             "-s", "%s" % self.server,
             "-t", "%s" % site,
         ]
-        self._execute_command(command)
+        return self._execute_command(command)
 
     def create_project(self, name, description=None):
         command = [
@@ -41,7 +41,7 @@ class PyTabCmd(object):
         ]
         if description is not None:
             command += ["-d", description]
-        self._execute_command(command)
+        return self._execute_command(command)
 
     def delete_project(self, name):
         command = [
@@ -49,4 +49,4 @@ class PyTabCmd(object):
             'deleteproject',
             name
         ]
-        self._execute_command(command)
+        return self._execute_command(command)
