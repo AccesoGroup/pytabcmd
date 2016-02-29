@@ -7,7 +7,7 @@ sys.path.insert(0, myPath + '/../')
 
 import pytest
 
-import settings
+from pytabcmd import settings
 from pytabcmd.pytabcmd import PyTabCmd
 
 

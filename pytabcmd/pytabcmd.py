@@ -1,6 +1,6 @@
 import subprocess
 
-import settings
+from . import settings
 
 
 class PyTabCmd(object):
