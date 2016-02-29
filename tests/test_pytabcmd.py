@@ -8,7 +8,7 @@ sys.path.insert(0, myPath + '/../')
 import pytest
 
 import settings
-from pytabcmd import PyTabCmd
+from pytabcmd.pytabcmd import PyTabCmd
 
 
 @pytest.fixture(autouse=True)
