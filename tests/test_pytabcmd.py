@@ -122,7 +122,7 @@ class TestExecuteCommand(object):
 
     @pytest.fixture(scope="function")
     def mock_subprocess(self, mocker):
-        return mocker.patch.object(subprocess, 'call')
+        return mocker.patch.object(subprocess, 'check_call')
 
     def test_login_doesnt_append_certcheck_by_default(self, mock_subprocess):
         self.instance._execute_command([])
